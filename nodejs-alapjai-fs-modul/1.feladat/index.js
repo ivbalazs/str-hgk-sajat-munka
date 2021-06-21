@@ -1,9 +1,16 @@
-const increaseAndFormatDate = require('./utils')
+const { mkdir, appendFile } = require('fs').promises
 
-const dates = [
-    new Date(Date.UTC(2021, 0, 28)),
-    new Date(Date.UTC(2021, 1, 28)),
-    new Date(Date.UTC(2021, 2, 28))
+const folders = ['controllers', 'routers', 'views']
+
+const files = [
+    './controllers/site.controller.js',
+    './routers/site.router.js',
+    './views/index.html',
+    './app.js'
 ]
 
-console.log('increaseAndFormatDate: ', increaseAndFormatDate(dates))
+const createFolders = folders => folders.map(folder => mkdir(folder))
+const createFiles = files => files.map(file => appendFile(file, ''))
+
+createFolders(folders)
+createFiles(files)
