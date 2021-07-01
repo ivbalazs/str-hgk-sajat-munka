@@ -25,6 +25,10 @@ id-jait
 Tipp: kérdezd le a rendezőket, és alájuk listázd a filmeket úgy, hogy csak az id-jük 
 és a rendező nevét adja vissza a lekérdezés:
 A képen szöveg látható  Automatikusan generált leírás
+db.directors.updateOne({name: "Steven Spielberg"}, {$push: {movies: {$each: [ObjectId("60dcb218bb421963791a3219"),ObjectId("60dcb218bb421963791a321c"),ObjectId("60dcb218bb421963791a321f")]}}})
+db.directors.updateOne({name: "Clint Eastwood"}, {$push: {movies: {$each: [ObjectId("60dcb218bb421963791a3218"),ObjectId("60dcb218bb421963791a321b"),ObjectId("60dcb218bb421963791a321e")]}}})
+db.directors.updateOne({name: "James Cameron"}, {$push: {movies: {$each: [ObjectId("60dcb218bb421963791a3217"),ObjectId("60dcb218bb421963791a321a"),ObjectId("60dcb218bb421963791a321d"),ObjectId("60dcb218bb421963791a3220")]}}})
+
 
 5. Ha frissítetted a rendezőket, ellenőrzés gyanánt kérdezd le a dokumentumokat a „directors” listából 
 (használd a pretty() metódust a szebb megjelenítéshez)! Ehhez hasonló eredményt kell látnod:
@@ -38,8 +42,8 @@ db.movies.updateMany({}, {$unset: {director: 0}})
 
 7. Kérdezd le az egy bizonyos év előtt készült filmeket, majd az egy bizonyos év után készült filmeket! 
 ($gt, $gte, $lt, $lte)
-db.movies.find({releaseYear: {$gte: 1980}})
-db.movies.find({releaseYear: {$lte: 1980}})
+db.movies.find({releaseYear: {$gte: 1994}})
+db.movies.find({releaseYear: {$lte: 1994}})
 
 8. Kérdezz le két év között készült filmeket! (Próbáld ki $and operátorral is!)
 db.movies.find({releaseYear: {$gt: 1970}, releaseYear: {$lt: 1990}})
