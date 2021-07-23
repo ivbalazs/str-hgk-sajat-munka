@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "firstName": "István",
+        "lastName": "Kovács",
+        "vaccine": "Pfizer"
+    },
+    {
+        "id": 2,
+        "firstName": "Péter",
+        "lastName": "Kiss",
+        "vaccine": "Szputnyik"
+    },
+    {
+        "id": 3,
+        "firstName": "László",
+        "lastName": "Nagy",
+        "vaccine": "Pfizer"
+    },
+    {
+        "id": 4,
+        "firstName": "Ferenc",
+        "lastName": "Közepes",
+        "vaccine": "AstraZeneca"
+    }
+]
